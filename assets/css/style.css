@@ -315,6 +315,7 @@ flex: 1;
   display: flex;
   padding: 15px;
   align-items: flex-end;
+  position: relative;
 }
 
 .trainer-1 {
@@ -373,25 +374,21 @@ margin-bottom: 15px;
 font-size: 17px;
 }
 
-.trainer-img::before {
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: rgba(252, 225, 56, 0.3);
-  position: absolute;
-  top: 0;
-  left: 0;
-
-}
 .trainer-img::after {
   content: "";
   height: 100%;
   width: 100%;
-  background: rgba(252, 225, 56, 0.3);
-  position: relative;
+  background: linear-gradient(rgba(252, 225, 56, 0.3), var(--secondary-color));
+  position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
 }
+
+.trainer-img::after {
+  opacity: 0;
+  transition:  2s;
+ }
 
 .section-title {
 font-size: 48px;
